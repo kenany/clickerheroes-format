@@ -1,5 +1,7 @@
 # clickerheroes-format
 
+[![Build Status](https://img.shields.io/travis/KenanY/clickerheroes-format.svg)](https://travis-ci.org/KenanY/clickerheroes-format)
+
 Format large numbers just as ClickerHeroes does.
 
 ## Example
