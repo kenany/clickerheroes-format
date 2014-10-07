@@ -19,7 +19,6 @@
   "scripts": {
     "test": "tape test/index.js"
   },
-  "dependencies": {},
   "devDependencies": {
     "lodash.isfunction": "^2.4.1",
     "tape": "^2.14.0"
