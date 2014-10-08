@@ -1,6 +1,14 @@
 var UNITS = 'KMBTqQsSONdUD!@#$%^&*';
 
 function format(n) {
+
+  // If `n === 0` (evaluates to `false` so we `!n` below) then just return 0
+  // now. Otherwise, we will get a divide-by-zero error below when we get the
+  // the sign of `n`.
+  if (!n) {
+    return '0';
+  }
+
   var original = n;
 
   // Get the sign of `n` for adding it back later

@@ -38,3 +38,8 @@ test('follows legend of large numbers', function(t) {
     t.equal(format(l[0]), l[1]);
   });
 });
+
+test('returns 0 on 0', function(t) {
+  t.equal(format(0), '0');
+  t.end();
+});
