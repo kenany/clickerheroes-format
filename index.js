@@ -2,6 +2,11 @@ var UNITS = 'KMBTqQsSONdUD!@#$%^&*';
 
 function format(n) {
   var original = n;
+
+  // Get the sign of `n` for adding it back later
+  var sign = Math.abs(n) / n;
+  n = Math.abs(n);
+
   var p = 0;
 
   while (n >= 1e5) {
@@ -13,6 +18,9 @@ function format(n) {
     // precision due to this rounding.
     n = Math.round(n);
   }
+
+  // Introduce the original sign before converting to a _String_
+  n *= sign;
 
   var str = n.toLocaleString();
 
