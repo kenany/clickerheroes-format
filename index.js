@@ -1,3 +1,5 @@
+var humanize = require('humanize-number');
+
 var UNITS = 'KMBTqQsSONdUD!@#$%^&*';
 
 function format(n) {
@@ -17,20 +19,20 @@ function format(n) {
 
   var p = 0;
 
-  while (n >= 1e5) {
-    n /= 1e3;
-    p++
+  var exponential = n.toExponential().split('e+');
+  var power = exponential[1];
+  power = +power;
 
-    // Fix for n = 1e23, 1e29, and 1e59, which round weirdly into a ton of 9's
-    // instead of 0's and 1's like the other numbers. We might be losing
-    // precision due to this rounding.
-    n = Math.round(n);
+  while (power >= 5) {
+    power -= 3;
+    p++;
   }
 
-  // Introduce the original sign before converting to a _String_
-  n *= sign;
+  // Reconstruct `n` but use reduced power (because a higher value unit is going
+  // to be attached to it). Also reintroduce its sign.
+  n = sign * exponential[0] * Math.pow(10, power);
 
-  var str = n.toLocaleString();
+  var str = humanize(Math.floor(n));
 
   if (p > UNITS.length) {
     return original.toExponential(3).replace('+', '');
