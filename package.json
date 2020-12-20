@@ -23,6 +23,7 @@
     "humanize-number": "^0.0.2"
   },
   "devDependencies": {
+    "@kenan/renovate-config": "^1.4.0",
     "lodash.isfunction": "^3.0.2",
     "tape": "^4.0.0"
   }
