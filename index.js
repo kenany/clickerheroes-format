@@ -2,6 +2,10 @@ var humanize = require('humanize-number');
 
 var UNITS = 'KMBTqQsSONdUD!@#$%^&*';
 
+/**
+ * @param {number} n
+ * @returns {string}
+ */
 function format(n) {
 
   // If `n === 0` (evaluates to `false` so we `!n` below) then just return 0
