@@ -1,8 +1,10 @@
-var format = require('../');
-var test = require('tape');
+'use strict';
+
+const test = require('tape');
+const format = require('../');
 
 test('preserves negative sign', function(t) {
-  var LEGEND = [
+  const LEGEND = [
     [1e5, '100K'],
     [1e8, '100M'],
     [1e11, '100B'],

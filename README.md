@@ -5,7 +5,7 @@ Format large numbers just as ClickerHeroes does.
 ## Example
 
 ``` javascript
-var format = require('clickerheroes-format');
+const format = require('clickerheroes-format');
 
 format(1e5);
 // => '100K'
@@ -20,7 +20,7 @@ $ npm install clickerheroes-format
 ## API
 
 ``` javascript
-var format = require('clickerheroes-format');
+const format = require('clickerheroes-format');
 ```
 
 ### `format(n)`

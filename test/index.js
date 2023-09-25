@@ -1,6 +1,8 @@
-var format = require('../');
-var test = require('tape');
-var isFunction = require('lodash.isfunction');
+'use strict';
+
+const test = require('tape');
+const isFunction = require('lodash.isfunction');
+const format = require('../');
 
 test('exports a function', function(t) {
   t.plan(1);
@@ -8,7 +10,7 @@ test('exports a function', function(t) {
 });
 
 test('follows legend of large numbers', function(t) {
-  var LEGEND = [
+  const LEGEND = [
     [1e5, '100K'],
     [1e8, '100M'],
     [1e11, '100B'],

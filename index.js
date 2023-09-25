@@ -1,13 +1,14 @@
-var humanize = require('humanize-number');
+'use strict';
 
-var UNITS = 'KMBTqQsSONdUD!@#$%^&*';
+const humanize = require('humanize-number');
+
+const UNITS = 'KMBTqQsSONdUD!@#$%^&*';
 
 /**
  * @param {number} n
  * @returns {string}
  */
 function format(n) {
-
   // If `n === 0` (evaluates to `false` so we `!n` below) then just return 0
   // now. Otherwise, we will get a divide-by-zero error below when we get the
   // the sign of `n`.
@@ -15,16 +16,16 @@ function format(n) {
     return '0';
   }
 
-  var original = n;
+  const original = n;
 
   // Get the sign of `n` for adding it back later
-  var sign = Math.abs(n) / n;
+  const sign = Math.abs(n) / n;
   n = Math.abs(n);
 
-  var p = 0;
+  let p = 0;
 
-  var exponential = n.toExponential().split('e+');
-  var power = exponential[1];
+  const exponential = n.toExponential().split('e+');
+  let power = exponential[1];
   power = +power;
 
   while (power >= 5) {
@@ -36,7 +37,7 @@ function format(n) {
   // to be attached to it). Also reintroduce its sign.
   n = sign * exponential[0] * Math.pow(10, power);
 
-  var str = humanize(Math.floor(n));
+  let str = humanize(Math.floor(n));
 
   if (p > UNITS.length) {
     return original.toExponential(3).replace('+', '');

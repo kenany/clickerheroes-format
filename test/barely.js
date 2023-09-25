@@ -1,8 +1,10 @@
-var format = require('../');
-var test = require('tape');
+'use strict';
+
+const test = require('tape');
+const format = require('../');
 
 test('does not round up', function(t) {
-  var LEGEND = [
+  const LEGEND = [
     [3999999999, '3,999M']
   ];
 
