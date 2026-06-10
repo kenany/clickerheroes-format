@@ -1,11 +1,11 @@
 # clickerheroes-format
 
-Format large numbers just as ClickerHeroes does.
+Format large numbers just as Clicker Heroes does.
 
 ## Example
 
-``` javascript
-const format = require('clickerheroes-format');
+```javascript
+import { format } from 'clickerheroes-format';
 
 format(1e5);
 // => '100K'
@@ -13,17 +13,17 @@ format(1e5);
 
 ## Installation
 
-``` bash
-$ npm install clickerheroes-format
+```bash
+$ pnpm install clickerheroes-format
 ```
 
 ## API
 
-``` javascript
-const format = require('clickerheroes-format');
+```javascript
+import { format } from 'clickerheroes-format';
 ```
 
 ### `format(n)`
 
-Format _Number_ `n` as a _String_ abbreviated with the same units that
-ClickerHeroes uses.
+Format _number_ `n` as a _string_ abbreviated with the same units that
+Clicker Heroes uses.
